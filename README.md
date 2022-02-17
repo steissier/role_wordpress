@@ -28,17 +28,17 @@ steissier.docker_role
 Example Playbook
 ----------------
 ---
-- hosts: all
-  vars:
-    ctnMysql: "mySql"
-    ctnWordpress: "wordpress"
-    ntwWordpress: "wordpress_network"
-    volDb: "db"
-    exposePort: "8080"
-  become: true
-  roles:
-    - steissier.docker_role
-    - role_wordpress
+    - hosts: all
+      vars:
+        ctnMysql: "mySql"
+        ctnWordpress: "wordpress"
+        ntwWordpress: "wordpress_network"
+        volDb: "db"
+        exposePort: "8080"
+      become: true
+      roles:
+        - steissier.docker_role
+        - role_wordpress
 ---
 
 
