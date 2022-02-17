@@ -1,9 +1,9 @@
 ---
 # tasks file for role_wordpress
 -name: "Création d'un reseau Docker"
- docker_networks:
-   name: wordpress_network
-   state: present
+   docker_networks:
+     name: wordpress_network
+     state: present
 
 -name: "Création du volume db"
   docker_volumes:
