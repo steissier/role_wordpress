@@ -27,7 +27,7 @@ steissier.docker_role
 
 Example Playbook
 ----------------
-
+---
 - hosts: all
   vars:
     ctnMysql: "mySql"
@@ -39,7 +39,7 @@ Example Playbook
   roles:
     - steissier.docker_role
     - role_wordpress
-
+---
 
 
 License
