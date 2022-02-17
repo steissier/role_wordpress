@@ -52,6 +52,16 @@
     ports:
       - "5000:80"
 
+- name: "Deploiement contener"
+  docker_container:
+    name: webapp
+    image: httpd
+    ports:
+      - "8080:80"
+    volumes:
+      - /home/ubuntu/dest:/usr/local/apache2/htdocs
+
+
 
 - name: "Création d'un reseau Docker"
   docker_network:
