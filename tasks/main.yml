@@ -8,6 +8,8 @@
     connected:
       - "{{ ctnMysql }}"
       - "{{ ctnWordpress }}"
+  debug:
+    msg: "nom du conteneur sql : {{ ctnMysql }}"
 
 - name: "Création du volume db"
   docker_volume:
@@ -39,8 +41,6 @@
     name: "{{ ctnWordpress }}"
     image: wordpress
     state: present
-    exposed_ports:
-      - "80"
     ports:
       - "{{ exposePort }}:80"
     env:
@@ -50,6 +50,7 @@
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - "wordpress:/var/www/html"
-    network_mode: "{{ ntwWordpress }}"
     networks:
       - name: "{{ ntwWordpress }}"
+  debug:
+    msg: "nom du reseau : {{ ntwWordpress }}"
