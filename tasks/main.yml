@@ -8,8 +8,7 @@
     connected:
       - "{{ ctnMysql }}"
       - "{{ ctnWordpress }}"
-  debug:
-    msg: "nom du conteneur sql : {{ ctnMysql }}"
+
 
 - name: "Création du volume db"
   docker_volume:
