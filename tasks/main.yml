@@ -3,7 +3,11 @@
 - name: "Création d'un reseau Docker"
   docker_network:
     name: "{{ ntwWordpress }}"
+    attachable: yes
     state: present
+    connected:
+      - "{{ ctnMysql }}"
+      - "{{ ctnWordpress }}"
 
 - name: "Création du volume db"
   docker_volume:
