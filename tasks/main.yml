@@ -51,5 +51,5 @@
       - "wordpress:/var/www/html"
     networks:
       - name: "{{ ntwWordpress }}"
-  debug:
-    msg: "nom du reseau : {{ ntwWordpress }}"
+#  debug:
+#    msg: "nom du reseau : {{ ntwWordpress }}"
