@@ -17,9 +17,9 @@
 
 - name: "Deploiement conteneur MySQL"
   docker_container:
-    name: mysql
+    name: "mysql"
     restart: always
-    image: mariadb
+    image: "mariadb"
     state: present
     env:
       MYSQL_DATABASE: wordpress
@@ -27,7 +27,7 @@
       MYSQL_PASSWORD: toto
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-      - db:/var/lib/mysql
+      - "db:/var/lib/mysql"
     networks:
       - wordpress_network
 
@@ -38,7 +38,7 @@
     restart: always
     state: present
     ports:
-      - 8080:80
+      - "8081:80"
     env:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: toto
