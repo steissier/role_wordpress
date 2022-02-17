@@ -14,7 +14,6 @@
   docker_container:
     name: "{{ ctnMysql }}"
     image: "mariadb"
-    state: present
     env:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: toto
@@ -29,7 +28,6 @@
   docker_container:
     name: "{{ ctnWordpress }}"
     image: wordpress
-    state: present
     ports:
       - "{{ exposePort }}:80"
     env:
@@ -43,25 +41,6 @@
 #      - name: "{{ ntwWordpress }}"
 #  debug:
 #    msg: "nom du reseau : {{ ntwWordpress }}"
-
-- name: "Deploiement conteneur nginx"
-  docker_container:
-    name: "nginx"
-    image: nginx
-    state: present
-    ports:
-      - "5000:80"
-
-- name: "Deploiement contener"
-  docker_container:
-    name: webapp
-    image: httpd
-    ports:
-      - "8080:80"
-    volumes:
-      - /home/ubuntu/dest:/usr/local/apache2/htdocs
-
-
 
 - name: "Création d'un reseau Docker"
   docker_network:
