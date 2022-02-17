@@ -32,7 +32,7 @@
 
 - name: "Deploiement conteneur Wordpress"
   docker_container:
-    name: worpress
+    name: "{{ ctnWordpress }}"
     image: wordpress
     state: present
     ports:
