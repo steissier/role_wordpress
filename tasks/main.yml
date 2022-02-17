@@ -1,22 +1,22 @@
 ---
 # tasks file for role_wordpress
 - name: "Création d'un reseau Docker"
-  docker_networks:
+  docker_network:
     name: wordpress_network
     state: present
 
 - name: "Création du volume db"
-  docker_volumes:
+  docker_volume:
     name: "db"
     state: present
 
 - name: "Création du volume wordpress"
-  docker_volumes:
+  docker_volume:
     name: "wordpress"
     state: present
 
 - name: "Deploiement conteneur MySQL"
-  do:docker_container:
+  docker_container:
     name: mysql
     restart: always
     image: mariadb
