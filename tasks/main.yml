@@ -44,6 +44,15 @@
 #  debug:
 #    msg: "nom du reseau : {{ ntwWordpress }}"
 
+- name: "Deploiement conteneur nginx"
+  docker_container:
+    name: "nginx"
+    image: nginx
+    state: present
+    ports:
+      - "5000:80"
+
+
 - name: "Création d'un reseau Docker"
   docker_network:
     name: "{{ ntwWordpress }}"
