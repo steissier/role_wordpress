@@ -21,7 +21,7 @@
     restart: always
     image: mariadb
     state: present
-    environment:
+    env:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: toto
       MYSQL_PASSWORD: toto
@@ -39,7 +39,7 @@
     state: present
     ports:
       - 8080:80
-    environment:
+    env:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: toto
       WORDPRESS_DB_PASSWORD: toto
