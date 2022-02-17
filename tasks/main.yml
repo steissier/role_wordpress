@@ -10,7 +10,7 @@
     name: "db"
     state: present
 
--name: "Création du volume wordpress"
+- name: "Création du volume wordpress"
   docker_volumes:
     name: "wordpress"
     state: present
