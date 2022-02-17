@@ -18,7 +18,6 @@
 - name: "Deploiement conteneur MySQL"
   docker_container:
     name: "mysql"
-    restart: always
     image: "mariadb"
     state: present
     env:
@@ -29,13 +28,12 @@
     volumes:
       - "db:/var/lib/mysql"
     networks:
-      - wordpress_network
+      - name: "wordpress_network"
 
 - name: "Deploiement conteneur Wordpress"
   docker_container:
     name: worpress
     image: wordpress
-    restart: always
     state: present
     ports:
       - "8081:80"
@@ -45,6 +43,6 @@
       WORDPRESS_DB_PASSWORD: toto
       WORDPRESS_DB_NAME: wordpress
     volumes:
-      - wordpress:/var/www/html
+      - "wordpress:/var/www/html"
     networks:
-      - wordpress_network
+      - name: "wordpress_network"
