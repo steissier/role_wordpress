@@ -36,7 +36,7 @@
     image: wordpress
     state: present
     ports:
-      - "80:8080"
+      - "8080:80"
     env:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: toto
